@@ -1,0 +1,166 @@
+/* ==========================================================
+   Bagian 2 (surat ucapan). Semua selector di-scope ke #stage2
+   supaya tidak bentrok dengan gaya bagian 1 (kue & balon).
+   ========================================================== */
+
+body.stage2-on { overflow: hidden; }
+
+#stage2 {
+  display: none;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 100000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #FEC0CD url(img/background.jpg) center center / cover no-repeat;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}
+
+#stage2 .d-none { display: none !important; }
+
+#s2-inner {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px 70px;
+}
+
+#stage2 img { max-width: 100%; }
+
+#stage2 .s2-img {
+  display: inline-block;
+  width: 350px;
+  max-width: 85%;
+  height: auto;
+}
+
+#tap {
+  position: fixed;
+  left: 0; right: 0; bottom: 22px;
+  margin: 0;
+  color: #6c757d;
+  pointer-events: none;
+}
+
+/* ---------- Kertas bergaris ---------- */
+#stage2 .paper {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  min-width: 300px;
+  height: 540px;
+  margin: 0 auto;
+  line-height: normal;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  overflow: hidden;
+}
+
+#stage2 .paper:before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 5px;
+  width: 45px;
+  background: radial-gradient(#616161 6px, transparent 7px) repeat-y;
+  background-size: 30px 30px;
+  border-right: 3px solid #D44147;
+  box-sizing: border-box;
+}
+
+#stage2 .paper-content {
+  position: absolute;
+  top: 30px; right: 0; bottom: 30px; left: 50px;
+  background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+  background-size: 30px 30px;
+}
+
+#stage2 .paper-content .teks {
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #3f3f44;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+/* ---------- Kotak pertanyaan ---------- */
+#stage2 .kotak {
+  position: relative;          /* "top" dipakai untuk tombol Gak! yang kabur */
+  top: 0;
+  width: 90%;
+  max-width: 550px;
+  min-width: 200px;
+  padding: 20px 0;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  overflow: hidden;
+}
+
+#stage2 .s2-question { margin: 4px 0 0; font-size: 20px; font-weight: 500; }
+#stage2 .s2-actions { margin-top: 14px; }
+
+/* ---------- Tombol ---------- */
+#stage2 .s2-btn {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 6px 18px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: color .15s, background-color .15s;
+}
+#stage2 .s2-btn-danger { color: #dc3545; border-color: #dc3545; }
+#stage2 .s2-btn-danger:hover, #stage2 .s2-btn-danger:focus { color: #fff; background: #dc3545; outline: 0; }
+#stage2 .s2-btn-info { color: #17a2b8; border-color: #17a2b8; }
+#stage2 .s2-btn-info:hover, #stage2 .s2-btn-info:focus { color: #fff; background: #17a2b8; outline: 0; }
+
+/* ---------- Penutup ---------- */
+#trims {
+  display: inline-block;
+  margin: 8px 0 0;
+  color: #6c757d;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 576px) {
+  #stage2 .paper {
+    height: 72vh;
+    min-width: 0;
+    width: 94%;
+  }
+  #stage2 .paper:before { left: 2px; width: 28px; background-size: 24px 24px; }
+  #stage2 .paper-content { left: 32px; top: 20px; bottom: 20px; }
+  #stage2 .paper-content .teks { font-size: 15px; padding: 0 6px; }
+  #stage2 .kotak { min-width: 0; width: 92%; }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  #stage2 .paper { height: 80vh; }
+  #s2-inner { justify-content: flex-start; }
+}

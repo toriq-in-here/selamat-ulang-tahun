@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<title>kado dari Toriq</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Happy Birthday aulia" />
+	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content="Birthday, Happy">
+	<meta property="og:type" content="E-Greeting" />
+	<meta property="og:image" content="favicon.ico" />
+	<meta property="og:description" content="Wish you a very Happy Birthday">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Library -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Signika&family=Quicksand:wght@300;500;700&family=Roboto&family=Handlee&display=swap" rel="stylesheet">
+
+	<!-- Bagian 1: kue, lampu, balon -->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="loading.css">
+	<link rel="stylesheet/less" href="cake.less">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+
+	<!-- Bagian 2: surat ucapan -->
+	<link rel="stylesheet" type="text/css" href="stage2.css">
+</head>
+
+<body>
+	<div class="loading"></div>
+	<audio class="song" controls loop>
+		<source src="Tahun.mp3">
+		Your browser isn't invited for super fun audio time.
+	</audio>
+
+	<!-- ================= BAGIAN 1 ================= -->
+	<div class="balloons text-center" id="b1">
+		<h2 style="color:#F2B300;">H</h2>
+	</div>
+	<div class="balloons text-center" id="b2">
+		<h2 style="color:#0719D4;">B</h2>
+	</div>
+	<div class="balloons text-center" id="b3">
+		<h2 style="color:#D14D39;">D</h2>
+	</div>
+	<div class="balloons text-center" id="b4">
+		<h2 style="color:#8FAD00;">A</h2>
+	</div>
+	<div class="balloons text-center" id="b5">
+		<h2 style="color:#8377E4;">U</h2>
+	</div>
+	<div class="balloons text-center" id="b6">
+		<h2 style="color:#99C96A;">L</h2>
+	</div>
+	<div class="balloons text-center" id="b7">
+		<h2 style="color:#20CFB4;">I</h2>
+	</div>
+	<div class="balloons text-center" id="b8">
+		<h2 style="color:#F2B300;">A</h2>
+	</div>
+
+	<img src="Balloon-Border.png" width="100%" class="balloon-border">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_yellow"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_red"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_blue"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_green"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_pink"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_orange"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<img src="banner.png" class="bannar">
+			</div>
+		</div>
+		<div class="row cake-cover">
+			<div class="col-md-12 texr-center">
+				<div class="cake">
+					<div class="velas">
+						<div class="fuego"></div>
+						<div class="fuego"></div>
+						<div class="fuego"></div>
+						<div class="fuego"></div>
+						<div class="fuego"></div>
+					</div>
+					<div class="cobertura"></div>
+					<div class="bizcocho"></div>
+				</div>
+			</div>
+		</div>
+		<div class="navbar navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-md-6 text-center col-md-offset-3">
+					<button class="btn btn-primary" id="turn_on">nyalain lampunya dong..</button>
+					<button class="btn btn-primary" id="play">Play Music</button>
+					<button class="btn btn-primary" id="bannar_coming">tambahin decorasinya yah..</button>
+					<button class="btn btn-primary" id="balloons_flying">terbangin balonnya sekarang..</button>
+					<button class="btn btn-primary" id="cake_fadein">kalau lagi happy klik yah</button>
+					<button class="btn btn-primary" id="light_candle"> Light Candle</button>
+					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ================= BAGIAN 2 (tampil setelah "Happy Birthday") ================= -->
+	<div id="stage2">
+		<div id="s2-inner">
+
+			<div id="slideSatu" class="animate__animated animate__slideInDown animate__slow d-none">
+				<img src="img/hbd1.png" class="s2-img" alt="Happy Birthday">
+			</div>
+
+			<div id="slideDua" class="paper d-none animate__animated animate__zoomInDown animate__slow">
+				<div class="paper-content">
+					<p id="teks1" class="teks"></p>
+				</div>
+			</div>
+
+			<div id="slideTiga" class="paper d-none animate__animated animate__fadeInRight">
+				<div class="paper-content">
+					<p id="teks2" class="teks"></p>
+				</div>
+			</div>
+
+			<div id="slideEmpat" class="kotak d-none animate__animated animate__fadeInDown animate__delay-2s">
+				<h5 class="s2-question">Kamu suka nggak?</h5>
+				<div class="s2-actions">
+					<button id="gak" class="s2-btn s2-btn-danger">Gak!</button>
+					<button id="suka" class="s2-btn s2-btn-info">Suka!!</button>
+				</div>
+			</div>
+
+			<div id="slideLima" class="d-none animate__animated animate__bounceIn animate__slow">
+				<svg viewBox="0 0 24 24" width="90" height="90" fill="#dc3545" aria-label="love">
+					<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+				</svg>
+			</div>
+			<p id="trims" class="d-none"></p>
+
+			<div id="slideEnam" class="d-none animate__animated animate__fadeIn">
+				<button id="replay" class="s2-btn s2-btn-danger">Putar ulang &#10084;</button>
+			</div>
+
+		</div>
+		<p id="tap" class="d-none animate__animated animate__pulse animate__slow animate__repeat-3">Ketuk untuk melanjutkan</p>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+	<script src="effect.js"></script>
+	<script src="stage2.js"></script>
+</body>
+</html>
